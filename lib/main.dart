@@ -6,9 +6,10 @@ import 'package:todo_app/src/themes/app_theme.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
-    create: (context) => TodoProvider(),
-    MaterialApp(title: "Todo App",  
-    theme: AppTheme.lightTheme,
-        darkTheme: AppTheme.darkTheme,
-        home: const HomePage())));
+      create: (context) => TodoProvider(),
+      child: MaterialApp(
+          title: "Todo App",
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          home: const HomePage())));
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/src/providers/todo_provider.dart';
-import 'package:todo_app/src/widgets/todo_tile.dart';
+import 'package:todo_app/src/widgets/tile.dart';
 import 'package:todo_app/src/screens/add_todo.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
       body: Consumer<TodoProvider>(
         builder: (context, todoProvider, child) {
           final todos = todoProvider.todos;
-          
+
           if (todos.isEmpty) {
             return const Center(
               child: Text('No todos yet. Add some!'),

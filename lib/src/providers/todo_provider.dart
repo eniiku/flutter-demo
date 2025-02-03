@@ -1,16 +1,18 @@
 import 'package:flutter/foundation.dart';
-import 'package:todo_app/src/providers/todo_provider.dart';
+import 'package:todo_app/src/models/todo_model.dart';
 
 class TodoProvider with ChangeNotifier {
-  List<Todo> _todos = [];
+  final List<Todo> _todos = [];
 
   List<Todo> get todos => _todos;
-  List<Todo> get completedTodos => _todos.where((todo) => todo.isCompleted).toList();
-  List<Todo> get pendingTodos => _todos.where((todo) => !todo.isCompleted).toList();
+  List<Todo> get completedTodos =>
+      _todos.where((todo) => todo.isCompleted).toList();
+  List<Todo> get pendingTodos =>
+      _todos.where((todo) => !todo.isCompleted).toList();
 
   void addTodo(Todo todo) {
     _todos.add(todo);
-    notifyListeners()
+    notifyListeners();
   }
 
   void toggleTodoStatus(String id) {
